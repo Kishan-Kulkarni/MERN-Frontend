@@ -5,6 +5,7 @@ import Login from "./Login"
 import Posts from "../Components/Posts"
 import Post from "../Components/Post"
 import PostLoad from "../Components/PostLoad"
+import axios from "axios"
 
 
 const Home = ({isAuth, setIsAuth}) => {
@@ -13,12 +14,12 @@ const Home = ({isAuth, setIsAuth}) => {
   const [data, setData]=useState({})
 
   async function getData(){
-    const response= await fetch('http://localhost:3000/post', {
-      mode: "no-cors",
-    })
-    const data = await response.json()
-    if(data.status==='ok'){
-      if(data.posts.length<1){
+    
+    const response= await axios.get('https://wordwise-cjja.onrender.com/post')
+    const data =  response.data.posts
+    
+    if(response.data.status==='ok'){
+      if(data.length<1){
         navigate('/write')
       }
       setIsLoading(false)
@@ -27,19 +28,21 @@ const Home = ({isAuth, setIsAuth}) => {
   }
   
   async function checkAuth(){
-    const req = await fetch('http://localhost:3000', {
+    
+    const req = await axios.get('https://wordwise-cjja.onrender.com', {
 			headers: {
 				'x-access-token': localStorage.getItem('token'),
 			},
-      mode: "no-cors",
 		})
+
+    
 
     if(!req){
       setIsAuth(false)
     }
 
     
-		const data = await req.json()
+		const data = req.data
 		if (data.status === 'ok') {
       setIsAuth(true)
 		} else {
@@ -53,7 +56,9 @@ const Home = ({isAuth, setIsAuth}) => {
 		if (token) {
       setIsAuth(true)
       checkAuth()
-      getData()
+      if(!data?.length){
+        getData()
+      }
 		}
   },[])
 
@@ -75,7 +80,7 @@ const Home = ({isAuth, setIsAuth}) => {
         </>:
         <>
         <Posts 
-         posts={data.posts}
+         posts={data}
         />
         </>
         }

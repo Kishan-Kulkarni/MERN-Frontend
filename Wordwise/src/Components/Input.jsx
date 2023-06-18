@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 const modules = {
   toolbar: [
     [{ 'header': [1, 2, false] }],
@@ -26,28 +27,22 @@ const Input = () => {
   const [content, setContent]=useState('')
   const navigate=useNavigate()
 
-  const handleInpt=async(e)=>{
+  const handleInpt=(e)=>{
     e.preventDefault()
     const id=localStorage.getItem('id')
-    const formData=new FormData();
-    formData.append('id', id)
-    formData.append('title', title)
-    formData.append('summary', summary)
-    formData.append('image', image)
-    formData.append('content', content)
     const data ={id, title, summary, image, content}
-    console.log(formData)
-    const resp=await fetch('http://localhost:3000/post', {
-      method:'POST',
-      mode: "no-cors",
-      body: formData,
-    })
-
-    if(resp.ok===true){
+    axios({
+      method: "post",
+      url: "https://wordwise-cjja.onrender.com/post",
+      data: data,
+      headers: { "Content-Type": "application/json" },
+    }).then(function (response) {
       navigate('/home')
-    }else{
+    })
+    .catch(function (response) {
+      console.log(response);
       alert("Post not created")
-    }
+    });
   }
 
 

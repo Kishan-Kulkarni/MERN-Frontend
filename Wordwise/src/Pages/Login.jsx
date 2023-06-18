@@ -11,7 +11,7 @@ const Login = ({isAuth, setIsAuth}) => {
       try {
         const data={username, password}
         // const response =await fetch('http://localhost:3000/login', params, {headers:{Accept:"application/x-www-form-urlencoded"}}, { withCredentials: true })
-        const response= await fetch('http://localhost:3000/login', {
+        const response= await fetch('https://wordwise-cjja.onrender.com/login', {
           method:'POST',
           headers:{
             "Content-Type":"application/json"
@@ -19,7 +19,6 @@ const Login = ({isAuth, setIsAuth}) => {
           body:JSON.stringify(data)
         })
         const user=await response.json()
-        console.log(user);
         if(user.ok){
           setIsAuth(true)
           localStorage.setItem('token', user.token)

@@ -4,7 +4,7 @@ const Post = (props) => {
   const [username, setUsername]=useState('')
   const navigate=useNavigate()
   async function getUser(){
-    const data=await fetch('http://localhost:3000/user', {
+    const data=await fetch('https://wordwise-cjja.onrender.com/user', {
       method:"POST",
       headers:{
         "Content-Type":"application/json"

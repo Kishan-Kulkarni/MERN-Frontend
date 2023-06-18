@@ -7,7 +7,7 @@ const Write = ({isAuth, setIsAuth}) => {
   const navigate=useNavigate()
   
   async function checkAuth(){
-    const req = await fetch('http://localhost:3000', {
+    const req = await fetch('https://wordwise-cjja.onrender.com', {
 			headers: {
 				'x-access-token': localStorage.getItem('token'),
 			},

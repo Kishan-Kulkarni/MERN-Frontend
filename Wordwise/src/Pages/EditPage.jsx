@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'
 const modules = {
   toolbar: [
     [{ 'header': [1, 2, false] }],
@@ -28,24 +29,20 @@ const EditPage = ({post}) => {
 
   const handleInpt=async(e)=>{
     e.preventDefault()
-    const data = new FormData();
-    data.set('title', title);
-    data.set('summary', summary);
-    data.set('content', content);
-    data.set('id', post.id);
-    data.set('_id', post._id)
-    data.set('image', image)
-    const response = await fetch('http://localhost:3000/post', {
-      method: 'PUT',
-      body: data,
-      credentials: 'include',
-    });
-
-    if(response.ok===true){
+    
+    const mod={title, summary, content, image, id:post.id, _id:post._id}
+    axios({
+      method: "put",
+      url: "https://wordwise-cjja.onrender.com/post",
+      data: mod,
+      headers: { "Content-Type": "application/json" },
+    }).then(function (response) {
       navigate('/home')
-    }else{
-      alert("Post not created")
-    }
+    })
+    .catch(function (response) {
+      console.log(response);
+      alert("Post not edited")
+    });
   }
 
   
