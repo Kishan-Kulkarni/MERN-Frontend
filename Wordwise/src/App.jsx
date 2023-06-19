@@ -18,7 +18,7 @@ function App() {
 
   return (
     <>
-       <Router>
+   
         <Routes>
           <Route index element={<Login 
           isAuth={isAuth}
@@ -49,7 +49,6 @@ function App() {
           setId={setId}
           />} />
         </Routes>
-      </Router>
     </>
   )
 }
