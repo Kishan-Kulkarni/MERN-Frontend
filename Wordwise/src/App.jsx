@@ -12,7 +12,7 @@ import './App.css'
 import PostPage from './Pages/PostPage';
 import EditPage from './Pages/EditPage';
 function App() {
-  
+
   const [isAuth, setIsAuth]=useState(false)
   const [id , setId]=useState('')
 
@@ -20,7 +20,7 @@ function App() {
     <>
        <Router>
         <Routes>
-          <Route  path="/" element={<Login 
+          <Route index element={<Login 
           isAuth={isAuth}
           setIsAuth={setIsAuth}
           />} />
