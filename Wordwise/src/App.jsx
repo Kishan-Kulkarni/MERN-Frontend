@@ -24,7 +24,7 @@ function App() {
           isAuth={isAuth}
           setIsAuth={setIsAuth}
           />} />
-          <Route path="/register" element={<Register 
+          <Route path="register" element={<Register 
             isAuth={isAuth}
           setIsAuth={setIsAuth}
           />} />
@@ -32,17 +32,17 @@ function App() {
            isAuth={isAuth}
           setIsAuth={setIsAuth}
           />} />
-          <Route path="/write" element={<Write 
+          <Route path="write" element={<Write 
             isAuth={isAuth}
           setIsAuth={setIsAuth}
           />} />
-          <Route path="/post/:id" element={<PostPage 
+          <Route path="post/:id" element={<PostPage 
             isAuth={isAuth}
           setIsAuth={setIsAuth}
           id={id}
           setId={setId}
           />} />
-          <Route path="/edit" element={<EditPage 
+          <Route path="edit" element={<EditPage 
             isAuth={isAuth}
           setIsAuth={setIsAuth}
           id={id}
