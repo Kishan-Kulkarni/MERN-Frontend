@@ -16,7 +16,7 @@ const Register = ({isAuth, setIsAuth}) => {
       params.append('password', password);
       const response =await axios.post('https://wordwise-cjja.onrender.com/register', params, {headers:{Accept:"application/x-www-form-urlencoded"}}, { withCredentials: true })
       if(response.data.isAuthenticated){
-        setIsAuth(true)
+        setIsAuth(false)
         alert("Registration succesful")
         navigate("/")
       }else{

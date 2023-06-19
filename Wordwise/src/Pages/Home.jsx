@@ -23,7 +23,7 @@ const Home = ({isAuth, setIsAuth}) => {
         navigate('/write')
       }
       setIsLoading(false)
-      setData(data)
+      setData(data.reverse())
     }
   }
   

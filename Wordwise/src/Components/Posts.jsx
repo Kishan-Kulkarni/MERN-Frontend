@@ -1,7 +1,7 @@
 import Post from "./Post"
 
 const Posts = (props) => {
-    const posts=props.posts.reverse()
+    const posts=props.posts
   return (
     <>
         {posts.map(post=>{

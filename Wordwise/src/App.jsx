@@ -12,7 +12,7 @@ import './App.css'
 import PostPage from './Pages/PostPage';
 import EditPage from './Pages/EditPage';
 function App() {
-
+  
   const [isAuth, setIsAuth]=useState(false)
   const [id , setId]=useState('')
 
