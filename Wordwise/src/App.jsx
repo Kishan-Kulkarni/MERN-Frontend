@@ -28,7 +28,7 @@ function App() {
             isAuth={isAuth}
           setIsAuth={setIsAuth}
           />} />
-          <Route path="/home" element={<Home 
+          <Route path="home" element={<Home 
            isAuth={isAuth}
           setIsAuth={setIsAuth}
           />} />
