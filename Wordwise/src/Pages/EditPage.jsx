@@ -23,7 +23,7 @@ const formats = [
 const EditPage = ({post}) => {
     const [title, setTile]=useState(post.title)
   const [summary, setSummary]=useState(post.summary)
-  const [image, setImage]=useState('')
+  const [image, setImage]=useState(post.image)
   const [content, setContent]=useState(post.content)
   const navigate=useNavigate()
 
