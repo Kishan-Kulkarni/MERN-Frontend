@@ -1,4 +1,4 @@
-# Introducing Wordwise: A Journey into the World of Words
+# Introducing [Wordwise](https://word-wise-blog.netlify.app): A Journey into the World of Words
 ## Introduction:
 Greetings, dear readers! I'm thrilled to embark on this exciting journey with you as I introduce you to Wordwise, a full stack blog website that aims to celebrate the beauty of words, knowledge sharing, and the art of web development. Allow me to take a moment to introduce myself—I am Kishan, a passionate full stack web developer who has poured heart and soul into creating this platform. And the best part? Wordwise isn't just my platform—it's yours too! I invite you to join me in this endeavor by sharing your thoughts, insights, and stories through your own blog posts on Wordwise.
 
@@ -24,5 +24,5 @@ I warmly invite you, dear reader, to join me on this adventure of words and wisd
 
 
 
-Conclusion
+## Conclusion
 With Wordwise, I have merged my technical prowess and my love for writing, giving birth to a platform that celebrates the beauty of words and fosters a sense of community. I am incredibly excited to embark on this journey with you, and I hope that Wordwise becomes a place where you find inspiration, knowledge, and a sense of belonging. 
