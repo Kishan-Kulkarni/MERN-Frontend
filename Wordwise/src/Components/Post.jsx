@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate,Navigate } from 'react-router-dom'
 const Post = (props) => {
+  const post=props
   const [username, setUsername]=useState('')
   const navigate=useNavigate()
   async function getUser(){
@@ -22,10 +23,10 @@ const Post = (props) => {
   return (
     <div className='post' >
         <div className="image">
-            <img src={props.image} alt="image"  onClick={()=>{navigate(`/post/${props._id}`)}}/>
+            <img src={props.image} alt="image"  onClick={()=>{navigate(`/post/${props._id}`, {state:post})}}/>
         </div>
         <div className="content">
-            <h1  onClick={()=>{navigate(`/post/${props._id}`)}}>{props.title}</h1>
+            <h1  onClick={()=>{navigate(`/post/${props._id}`, {state:post})}}>{props.title}</h1>
             <p className='author'>{username}</p>
             <p className='date'>{new Date(props.updatedAt).toUTCString().split(' ')[1]+'-'+new Date(props.updatedAt).toUTCString().split(' ')[2]+'-'+new Date(props.updatedAt).toUTCString().split(' ')[3]}</p>
             <p className='summary'>{props.summary}

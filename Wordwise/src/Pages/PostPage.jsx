@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react"
 import { Navigate, useNavigation } from "react-router-dom"
-import { useParams } from "react-router-dom"
+import { useParams, useLocation } from "react-router-dom"
 import Navbar from "../Components/Navbar";
 import PostPageLoad from "../Components/PostPageLoad";
 import EditPage from "./EditPage";
 const PostPage = ({isAuth, setIsAuth, id, setId}) => {
+    const location=useLocation()
     const  params=useParams()
-    const [content, setContent ]=useState({})
+    const [content, setContent ]=useState(location.state)
     const [username, setUsername]=useState('')
     const [loading, setLoading]=useState(true)
     const [redirect , setRedirect]=useState(false)
@@ -62,7 +63,9 @@ const PostPage = ({isAuth, setIsAuth, id, setId}) => {
             setLoading(true)
         setIsAuth(true)
         checkAuth()
-        getData()
+        if(content.title === null){
+           getData()
+        }
         }
       }, [])
 
