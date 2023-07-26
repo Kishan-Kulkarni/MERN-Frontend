@@ -8,10 +8,9 @@ import PostLoad from "../Components/PostLoad"
 import axios from "axios"
 
 
-const Home = ({isAuth, setIsAuth}) => {
+const Home = ({isAuth, setIsAuth,data,setData}) => {
   const navigate=useNavigate()
   const [isLoading, setIsLoading]=useState(true)
-  const [data, setData]=useState({})
 
   async function getData(){
     
@@ -57,7 +56,11 @@ const Home = ({isAuth, setIsAuth}) => {
       setIsAuth(true)
       checkAuth()
       if(!data?.length){
+        console.log('here')
         getData()
+      }else{
+        setIsLoading(false)
+      setData(data)
       }
 		}
   },[])

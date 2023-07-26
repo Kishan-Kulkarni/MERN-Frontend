@@ -89,7 +89,7 @@ const PostPage = ({isAuth, setIsAuth, id, setId}) => {
             <div className="author"><p>{username}</p></div>
             <div className="date"><p>{new Date(content.updatedAt).toUTCString().split(' ')[1]+'-'+new Date(content.updatedAt).toUTCString().split(' ')[2]+'-'+new Date(content.updatedAt).toUTCString().split(' ')[3]}</p></div>
             {(localStorage.getItem('id')==content.id)?<div className="edit"><button onClick={()=>{setRedirect(true)}}>Edit Post</button></div>:<></>}
-            <img className="image" src={content.image}/> 
+            {content.image&&<img className="image" src={content.image}/> }
             <div className="content" dangerouslySetInnerHTML={{__html:content.content}}></div>
             </div>}
             </>}</>

@@ -19,11 +19,12 @@ const Post = (props) => {
   useEffect(()=>{
     getUser()
   },[])
+  console.log()
 
   return (
     <div className='post' >
         <div className="image">
-            <img src={props.image} alt="image"  onClick={()=>{navigate(`/post/${props._id}`, {state:post})}}/>
+            {props.image===""?<img src="default.jpg" alt=""  onClick={()=>{navigate(`/post/${props._id}`, {state:post})}}/>:<img src={props.image} alt=""  onClick={()=>{navigate(`/post/${props._id}`, {state:post})}}/>}
         </div>
         <div className="content">
             <h1  onClick={()=>{navigate(`/post/${props._id}`, {state:post})}}>{props.title}</h1>
