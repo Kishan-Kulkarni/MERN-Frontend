@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import Navbar from "../Components/Navbar"
-import { Navigate, useNavigate } from "react-router-dom"
+import { Navigate, useNavigate , useLocation} from "react-router-dom"
 import Login from "./Login"
 import Posts from "../Components/Posts"
 import Post from "../Components/Post"
@@ -10,6 +10,7 @@ import axios from "axios"
 
 const Home = ({isAuth, setIsAuth,data,setData}) => {
   const navigate=useNavigate()
+  const location=useLocation()
   const [isLoading, setIsLoading]=useState(true)
 
   async function getData(){
@@ -55,12 +56,16 @@ const Home = ({isAuth, setIsAuth,data,setData}) => {
 		if (token) {
       setIsAuth(true)
       checkAuth()
-      if(!data?.length){
+      if(!data?.length && !location.state?.length) {
         console.log('here')
         getData()
       }else{
         setIsLoading(false)
-      setData(data)
+        if(location.state?.length){
+          setData(location.state)
+        }else{
+          setData(data)
+        }
       }
 		}
   },[])

@@ -3,7 +3,7 @@ import Input from "../Components/Input"
 import { useEffect } from "react"
 import { Navigate,useNavigate } from "react-router-dom"
 
-const Write = ({isAuth, setIsAuth}) => {
+const Write = ({isAuth, setIsAuth,data,setData}) => {
   const navigate=useNavigate()
   
   async function checkAuth(){
@@ -43,7 +43,10 @@ const Write = ({isAuth, setIsAuth}) => {
           isAuth={isAuth}
           setIsAuth={setIsAuth}
         />
-        <Input />
+        <Input 
+          currdata={data}
+          setData={setData}
+        />
     </div>:<Navigate to='/'/>}
     </>
 

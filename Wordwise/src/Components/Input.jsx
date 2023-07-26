@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 const modules = {
   toolbar: [
@@ -20,7 +20,8 @@ const formats = [
   'link', 'image'
 ]
 
-const Input = () => {
+const Input = ({currdata, setData}) => {
+  const location=useLocation()
   const [title, setTile]=useState('')
   const [summary, setSummary]=useState('')
   const [image, setImage]=useState('')
@@ -37,7 +38,9 @@ const Input = () => {
       data: data,
       headers: { "Content-Type": "application/json" },
     }).then(function (response) {
-      navigate('/home')
+      currdata={...currdata,data}
+      setData(currdata)
+      navigate('/home', {state:currdata})
     })
     .catch(function (response) {
       console.log(response);

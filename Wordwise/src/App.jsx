@@ -57,6 +57,7 @@ function App() {
             isAuth={isAuth}
             setIsAuth={setIsAuth}
             data={data}
+            setData={setData}
           />} />
           <Route path="post/:id" element={<PostPage 
             isAuth={isAuth}
