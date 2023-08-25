@@ -405,6 +405,9 @@ h1{
     padding-left: 5px;
 }
 
+.postpage{
+    width: 100vw;
+}
 
 .postpage .top{
     display: flex;
@@ -457,6 +460,7 @@ h1{
 
 .postpage .content p{
     font-size: 1rem;
+    width: 95%;
 }
 
 .postpage-load{
@@ -521,12 +525,12 @@ h1{
         margin-bottom: 5px;
     }
     .post .content{
-        width: 100vw;
+        width: 90vw;
         text-align: center;
     }
 
     .content h1{
-        width: 70vw;
+        width: 90vw;
         margin: 5px auto;
     }
 
@@ -562,29 +566,32 @@ h1{
         width: 100%;
         margin-top: 40px;
     }
+    
+    .postpage .content h1{
+        font-size: 1.9rem;
+        text-align: left;
+        width: 100vw;
+    }
+    
+    .postpage .content h2{
+        font-size: 1.4rem;
+        text-align: left;
+    }
+    
+    .postpage .content p{
+        font-size: 1rem;
+    }
 
     .postpage .title{
         font-size: 1.2rem;
+        width: 100vw;
     }
     .postpage .content{
         background-color: rgba(240, 248, 255, 0.604);
         width:100%
     }
 
-    .postpage .content h1{
-        font-size: 2.2rem;
-        margin: 5px 0px;
-        width: 100%;
 
-    }
-    .postpage .content h2{
-        font-size: 1.9rem;
-        margin: 5px 0px;
-        width: 100%;
-    }
-    .postpage .content p{
-        font-size: 1.4rem;
-    }
     #title-inp , #title-sum{
         display: flex;
         justify-content: center;
