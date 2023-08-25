@@ -503,6 +503,9 @@ h1{
 
 
 @media (max-width: 767px) {
+    .home{
+        width: 100vw;
+    }
     .nav{
         padding: 20px 0px 0px 0px;
         display: flex;
@@ -514,7 +517,7 @@ h1{
     }
 
     .post{
-        width: 95vw;
+        width: 90vw;
         display: flex;
         align-items: center;
     justify-content: space-around;
@@ -563,7 +566,7 @@ h1{
     }
 
     .postpage{
-        width: 100%;
+        width: 95%;
         margin-top: 40px;
     }
     
