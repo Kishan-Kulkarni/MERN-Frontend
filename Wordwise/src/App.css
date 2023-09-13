@@ -535,6 +535,7 @@ h1{
     .content h1{
         width: 90vw;
         margin: 5px auto;
+
     }
 
     .content .summary{
@@ -566,14 +567,14 @@ h1{
     }
 
     .postpage{
-        width: 95%;
+        width: 95vw;
         margin-top: 40px;
     }
     
     .postpage .content h1{
         font-size: 1.9rem;
         text-align: left;
-        width: 100vw;
+        width: 90vw;
     }
     
     .postpage .content h2{
@@ -587,7 +588,7 @@ h1{
 
     .postpage .title{
         font-size: 1.2rem;
-        width: 100vw;
+        margin: 0px auto;
     }
     .postpage .content{
         background-color: rgba(240, 248, 255, 0.604);
