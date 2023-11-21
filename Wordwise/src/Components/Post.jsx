@@ -29,7 +29,7 @@ const Post = (props) => {
         <div className="content">
             <h1  onClick={()=>{navigate(`/post/${props._id}`, {state:post})}}>{props.title}</h1>
             <p className='author'>{username}</p>
-            <p className='date'>{new Date(props.updatedAt).toUTCString().split(' ')[1]+'-'+new Date(props.updatedAt).toUTCString().split(' ')[2]+'-'+new Date(props.updatedAt).toUTCString().split(' ')[3]}</p>
+            {/* <p className='date'>{new Date(props.updatedAt).toUTCString().split(' ')[1]+'-'+new Date(props.updatedAt).toUTCString().split(' ')[2]+'-'+new Date(props.updatedAt).toUTCString().split(' ')[3]}</p> */}
             <p className='summary'>{props.summary}
             </p>
         </div>
